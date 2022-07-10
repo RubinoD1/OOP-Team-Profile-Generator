@@ -25,13 +25,10 @@ test('gets employee name value', () => {
     expect(employee.name.length).toBeGreaterThan(0);
 });
 
-/*
-test('get employee ID value', () => {
-    const id = new ID(1);
 
-    expect()
+test('gets employee ID value', () => {
+    const employee = new Employee('Diane');
+    employee.id = 1;
 
-
-
-})
-*/
+    expect(employee.id).toEqual(expect.any(Number));
+});
