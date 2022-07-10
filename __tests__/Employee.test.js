@@ -19,7 +19,7 @@ test('creates a employee object', () => {
     expect(employee.role).toBe('Employee');
 });
 
-//employee name check- a string that has a length greter than zero(empty).
+//employee name test- a string that has a length greter than zero(empty).
 test('gets employee name value', () => {
     const employee = new Employee('Diane');
 
@@ -27,10 +27,23 @@ test('gets employee name value', () => {
     expect(employee.name.length).toBeGreaterThan(0);
 });
 
-//employee id check- checks for a number 
+//employee id test- checks for a number 
 test('gets employee ID value', () => {
     const employee = new Employee('Diane');
-    employee.id = 1;
-
+    
     expect(employee.id).toEqual(expect.any(Number));
+});
+
+//employee email test - checks for a string 
+test('gets employee email value', () => {
+    const employee = new Employee('Diane');
+    
+    expect(employee.email).toEqual(expect.any(String));
+});
+
+//employee role test - checks employee role value for 'Employee'
+test('gets employee role value', () => {
+    const employee = new Employee('Diane');
+    
+    expect(employee.role).toBe('Employee');
 });
