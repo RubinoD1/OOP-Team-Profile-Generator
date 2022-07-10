@@ -33,6 +33,10 @@ Finally, although it’s not a requirement, you should consider adding validatio
 2) Output 
 -  Generates an HTML webpage that displays summaries for each person
 
+3) double check .gitignore file has all proper files included 
+
+4) make video guide 
+
 
 
 
