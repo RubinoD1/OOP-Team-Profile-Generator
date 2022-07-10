@@ -5,12 +5,33 @@ email
 role -- returns employee
 */
 
+
 const Employee = require('../lib/Employee.js');
 
-test('Creates an employee object', () => {
+test('creates a employee object', () => {
+    const employee = new Employee('Diane');
+
+    expect(employee.name).toBe('Diane');
+    expect(employee.id).toEqual(expect.any(Number));
+    expect(employee.email).toEqual(expect.any(String));
+    expect(employee.role).toBe('Employee');
+});
+
+
+test('gets employee name value', () => {
     const employee = new Employee('Diane');
 
     expect(employee.name).toEqual(expect.any(String));
     expect(employee.name.length).toBeGreaterThan(0);
-    
 });
+
+/*
+test('get employee ID value', () => {
+    const id = new ID(1);
+
+    expect()
+
+
+
+})
+*/
