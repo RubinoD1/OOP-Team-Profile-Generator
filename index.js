@@ -81,4 +81,27 @@ const createManager = () => {
     })
 };
 
+//creates employee after manager has been added. 
+const createEmployee = () => {
+    return inquirer.prompt([
+        {
+            type: 'list',
+            name: 'role',
+            message: "Select the role of the employee",
+            //****add manager and office # to list once html working***
+            choices: ['Engineer', 'Intern']
+        },
+        {
+
+        }
+    ])
+}
+
+
+
+
+
+
+
+
 createManager();
