@@ -72,6 +72,13 @@ const createManager = () => {
             } 
         }
     ])
-}
+    .then(managerData => {
+        const  { name, id, email, officeNumber } = managerData; 
+        const manager = new Manager (name, id, email, officeNumber);
+
+        employeeArray.push(manager); 
+        console.log(manager); 
+    })
+};
 
 createManager();
