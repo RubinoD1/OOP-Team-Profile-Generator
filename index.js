@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs'); 
 //HTML template
-const creeateHTML = require('./src/HTML-template.html');
+//const creeateHTML = require('./src/HTML-template.html');
 
 //Employee js files 
 const Engineer = require('./lib/Engineer');
@@ -73,3 +73,5 @@ const createManager = () => {
         }
     ])
 }
+
+createManager();
