@@ -1,76 +1,82 @@
+//engineer card template
 const engineerTemplate = function (engineer) {
     return `
-    <div class="card column is-one-quarter">
+<div class="card column is-one-quarter  has-background-grey-lighter">
     <header class="card-header">
-        <h2 class="card-header-title">
+        <h2 class="card-header-title is-4 has-background-info">
               ${engineer.name}
         </h2>
     </header>
     <ul class="card-content">
         <li class="content">
-            Id: ${engineer.id}
+             <b>Role: Engineer</b>
         </li>
         <li class="content">
-            Email: ${engineer.email}
+              <b>Id: ${engineer.id}</b>
+        </li>
+       <li class="content">
+              <b>GitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a></b>
         </li>
         <li class="content">
-            GitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a>
+          <b>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></b>
         </li>
-        <li class="content">
-            Role: Engineer
-        </li>
+       
     </ul>
 </div>   
     `
 };
 
+//Intern card template
 const internTemplate = function (intern) {
     return `
-    <div class="card column is-one-quarter">
+<div class="card column is-one-quarter  has-background-grey-lighter">
     <header class="card-header">
-        <h2 class="card-header-title">
+        <h2 class="card-header-title is-4 has-background-info">
              ${intern.name}
         </h2>
     </header>
     <ul class="card-content">
         <li class="content">
-             ID: ${intern.id}
+               <b>Role: Intern</b>
         </li>
         <li class="content">
-            Email: ${intern.email}
+                <b>ID: ${intern.id}</b>
+        </li>
+       <li class="content">
+               <b>School: ${intern.school}</b>
         </li>
         <li class="content">
-            School: ${intern.school}
+           <b>Email: <a href="mailto:${intern.email}">${intern.email}</a></b>
         </li>
-        <li class="content">
-            Role: Intern
-        </li>
+        
     </ul>
 </div>
     `
 };
 
+//Manager card template
 const managerTemplate = function (manager) {
     return `
-    <div class="card column is-one-quarter">
+<div class="card column is-one-quarter  has-background-grey-lighter">
     <header class="card-header">
-        <h2 class="card-header-title">
+        <h2 class="card-header-title is-4 has-background-info">
               ${manager.name}
         </h2>
     </header>
     <ul class="card-content">
         <li class="content">
-            Id: ${manager.id}
+                <b>Role: Manager</b>
         </li>
         <li class="content">
-            Email: ${manager.email}
+                <b>Id: ${manager.id}</b>
         </li>
         <li class="content">
-            Office #: ${manager.officeNumber}
+              <b>Office #: ${manager.officeNumber} </b>
         </li>
         <li class="content">
-            Role: Manager
+             <b>Email: <a href="mailto:${manager.email}">${manager.email}</a> </b>
         </li>
+        
     </ul>
 </div>
     `
@@ -85,34 +91,33 @@ const createHTML = function(data) {
         const employee = data[i];
         const role = employee.getRole(); 
 
-        //check role if match create engineer employeee card
+        //check role if match, if it is push data to array to be used in employee templates
         if (role === 'Engineer') {
             const engineerCard = engineerTemplate(employee);
 
             teamCardsArray.push(engineerCard);
         }
-        //check role if match create intern employeee card
+        
         if (role === 'Intern') {
             const internCard = internTemplate(employee);
 
             teamCardsArray.push(internCard);
         }
         
-        //check role if match create manager card
-        if (role === 'Manager') {
+       if (role === 'Manager') {
             const managerCard = managerTemplate(employee);
 
             teamCardsArray.push(managerCard);
         }
     }
-    const teamCards = teamCardsArray.join('')
+      const teamCards = teamCardsArray.join('')
 
-    const makeHTML = generateHTML(teamCards); 
+      const makeHTML = generateHTML(teamCards); 
     
-    return makeHTML;
+      return makeHTML;
 };
 
-
+//HTML template 
 const generateHTML = function (teamCards) {
     return`
     <!DOCTYPE html>
@@ -126,23 +131,24 @@ const generateHTML = function (teamCards) {
             Team Profiles
         </title>
     </head>
-    <body>
+<body>
         
         <!--header-->
-        <header id="header" class="hero is-link">
+    <header id="header" class="hero is-link">
            <div class="hero-body">
-            <h1 class="title">
+            <h1 class="title is-1">
                 Team Profile
             </h1>
            </div>
-        </header>
+    </header>
+</br>    
         
-        <main class="card columns">
-            ${teamCards}
-        </main>
+    <main class="card columns is-3 is-multiline">
+        ${teamCards}
+    </main>
 
-    </body>
-    </html>
+</body>
+</html>
     `;
 };
 
