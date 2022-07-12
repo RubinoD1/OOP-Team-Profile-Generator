@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs'); 
 //HTML template
-const createHTML = require('./src/HTML-template.html');
+const createHTML = require('./src/HTML-template.js');
 
 //Employee js files 
 const Engineer = require('./lib/Engineer');
