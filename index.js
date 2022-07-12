@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs'); 
 //HTML template
-//const creeateHTML = require('./src/HTML-template.html');
+const createHTML = require('./src/HTML-template.html');
 
 //Employee js files 
 const Engineer = require('./lib/Engineer');
@@ -195,9 +195,28 @@ const createEmployee = () => {
 };
 
 
+//function to write HTML file
+function writeToFile(data) {
+    fs.writeFile("./dist/index.html", data, err => {
+       //if there is an error
+       if (err) throw err;
+       //else success message
+       console.log('HTML created! Check out the index.html file in the dist folder!');
+    });
+    
+ }
 
 createManager()
   .then(createEmployee)
+  .then(employeeArray => {
+    return createHTML(employeeArray);
+  })
+  .then(pageHTML => {
+    return writeToFile(pageHTML);
+  })
+  .catch(err => {
+ console.log(err);
+  });
 
 
 
