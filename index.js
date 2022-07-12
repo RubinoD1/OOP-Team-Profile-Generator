@@ -77,8 +77,7 @@ const createManager = () => {
         const manager = new Manager (name, id, email, officeNumber);
 
         employeeArray.push(manager); 
-        console.log(manager); 
-    })
+    });
 };
 
 //creates employee after manager has been added. 
@@ -92,10 +91,82 @@ const createEmployee = () => {
             choices: ['Engineer', 'Intern']
         },
         {
-
+            type: 'input',
+            name: 'name',
+            message: "Enter emplyee's name",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                  } else { 
+                    console.log('A name must be entered for the employee');
+                    return false;
+                  }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: "Enter employee's id",
+            validate: nameInput => {
+                //cheecks for a number 
+                if (isNaN(nameInput)) {
+                    console.log('A employee id number must be entered');
+                    return false;
+                  } else { 
+                    return true;
+                  }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Enter employee's email address",
+            validate: email => {
+                //email valid format check
+                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                
+                if (valid) {
+                    return true;
+                  } else { 
+                    console.log('A email address must be entered');
+                    return false;
+                  }
+            }
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "Enter Intern's school",
+            when: (input) => input.role === "Intern",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log ("A school must be enetered")
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: "Enter engineer's GitHub username",
+            when: (input) => input.role === "Engineer",
+            validate: nameInput => {
+                if (nameInput ) {
+                    return true;
+                } else {
+                    console.log ("A GitHub username must be entered")
+                }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmCreate',
+            message: 'Add another employeee?',
+            default: false
         }
     ])
-}
+};
 
 
 
