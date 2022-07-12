@@ -133,6 +133,7 @@ const createEmployee = () => {
                   }
             }
         },
+        //checks for intern role and if match asks question
         {
             type: 'input',
             name: 'school',
@@ -146,6 +147,7 @@ const createEmployee = () => {
                 }
             }
         },
+        //checks for engineer role and if match asks question
         {
             type: 'input',
             name: 'github',
@@ -159,6 +161,7 @@ const createEmployee = () => {
                 }
             }
         },
+        //asks if user wants to add another employee
         {
             type: 'confirm',
             name: 'confirmCreate',
@@ -166,13 +169,37 @@ const createEmployee = () => {
             default: false
         }
     ])
+    .then(employeeData => {
+        let { name, id, email, role, github, school, confirmCreate } = employeeData; 
+        let employee; 
+
+        if (role === "Engineer") {
+            employee = new Engineer (name, id, email, github);
+
+            console.log(employee);
+
+        } else if (role === "Intern") {
+            employee = new Intern (name, id, email, school);
+
+            console.log(employee);
+        }
+
+        employeeArray.push(employee); 
+
+        if (confirmCreate) {
+            return createEmployee(employeeArray); 
+        } else {
+            return employeeArray;
+        }
+    })
 };
 
 
 
+createManager()
+  .then(createEmployee)
 
 
 
 
 
-createManager();
