@@ -1,51 +1,16 @@
 # OOP Team Profile Generator 
 
-## Pseudocode 
-1) Testing and classes (Jest and Inquirer)
-
-Employee is the parent class 
-Properties:
-- name 
-- id
-- email
-- getName()
-- getId()
-- getEmail()
-- getRole() // Returns 'Employee'
-
-The other classes will extend employee
-Manager Propeties:
-- officeNumber
-- getRole() // Overridden to return 'Manager'
-
-Engineer Properties:
-- github // GitHub username 
-- getGithub()
-- getRole() // Overridden to return 'Engineer'
-
-Intern Properties:
-- school 
-- getSchool()
-- getRole() // Overridden to return 'Intern"
-
-Finally, although it’s not a requirement, you should consider adding validation to ensure that user input provided is in the proper expected format.
-
-2) Output 
--  Generates an HTML webpage that displays summaries for each person
-
-3) double check .gitignore file has all proper files included (check last assignment info)
-
-4) make video guide 
-
-
-
-
-
-
 ## Links 
-GitHub repository:
+GitHub repository: https://github.com/RubinoD1/OOP-Team-Profile-Generator
+
+- A sample HTML page can be found in the 'dist' folder as index.html 
 
 ## Introduction 
+This is a Node.js built "Team Profile Generator" that generates a HTML page that displays employee information that is based on user input. 'Jest' was used for testing purposes and 'Inquirer' was used for the command line questions.  
 
 ## Instructional 
 Video Guide: 
+
+(In the command line)
+- To run tests: npm run test 
+- To start app: node index

@@ -82,12 +82,12 @@ const createManager = () => {
 
 //creates employee after manager has been added. 
 const createEmployee = () => {
+   
     return inquirer.prompt([
         {
             type: 'list',
             name: 'role',
             message: "Select the role of the employee",
-            //****add manager and office # to list once html working***
             choices: ['Engineer', 'Intern']
         },
         {
@@ -203,8 +203,7 @@ function writeToFile(data) {
        //else success message
        console.log('HTML created! Check out the index.html file in the dist folder!');
     });
-    
- }
+};
 
 createManager()
   .then(createEmployee)

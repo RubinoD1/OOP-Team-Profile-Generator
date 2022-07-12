@@ -12,10 +12,10 @@ const engineerTemplate = function (engineer) {
              <b>Role: Engineer</b>
         </li>
         <li class="content">
-              <b>Id: ${engineer.id}</b>
+              <b>ID: ${engineer.id}</b>
         </li>
        <li class="content">
-              <b>GitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a></b>
+              <b>GitHub: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></b>
         </li>
         <li class="content">
           <b>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></b>
@@ -68,7 +68,7 @@ const managerTemplate = function (manager) {
                 <b>Role: Manager</b>
         </li>
         <li class="content">
-                <b>Id: ${manager.id}</b>
+                <b>ID: ${manager.id}</b>
         </li>
         <li class="content">
               <b>Office #: ${manager.officeNumber} </b>
@@ -142,12 +142,13 @@ const generateHTML = function (teamCards) {
            </div>
     </header>
 </br>    
-        
-    <main class="card columns is-3 is-multiline">
+        <!--employee info cards-->
+<main class="card columns is-3 is-multiline">
         ${teamCards}
-    </main>
+</main>
 
 </body>
+
 </html>
     `;
 };
