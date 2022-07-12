@@ -1,3 +1,23 @@
+const engineerTemplate = function (engineer) {
+    return `
+ 
+    `
+};
+
+
+
+const internTemplate = function (intern) {
+    return `
+ 
+    `
+};
+
+
+const managerTemplate = function (manager) {
+    return `
+ 
+    `
+};
 
 
 const createHTML = function(data) {
@@ -10,20 +30,20 @@ const createHTML = function(data) {
 
         //check role if match create engineer employeee card
         if (role === 'Engineer') {
-            const engineerCard = generateEngineer(employee);
+            const engineerCard = engineerTemplate(employee);
 
             teamCardsArray.push(engineerCard);
         }
         //check role if match create intern employeee card
         if (role === 'Intern') {
-            const internCard = generateIntern(employee);
+            const internCard = internTemplate(employee);
 
             teamCardsArray.push(internCard);
         }
         
         //check role if match create manager card
         if (role === 'Manager') {
-            const managerCard = generateManager(employee);
+            const managerCard = managerTemplate(employee);
 
             teamCardsArray.push(managerCard);
         }
