@@ -1,6 +1,34 @@
 
 
+const createHTML = function(data) {
+    //array for the employee cards that will created 
+    teamCardsArray = [];
 
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const role = employee.getRole(); 
+
+        //check role if match create engineer employeee card
+        if (role === 'Engineer') {
+            const engineerCard = generateEngineer(employee);
+
+            teamCardsArray.push(engineerCard);
+        }
+        //check role if match create intern employeee card
+        if (role === 'Intern') {
+            const internCard = generateIntern(employee);
+
+            teamCardsArray.push(internCard);
+        }
+        
+        //check role if match create manager card
+        if (role === 'Manager') {
+            const managerCard = generateManager(employee);
+
+            teamCardsArray.push(managerCard);
+        }
+    }
+};
 
 
 const generateHTML = function (teamCards) {
