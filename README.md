@@ -6,7 +6,7 @@ GitHub repository: https://github.com/RubinoD1/OOP-Team-Profile-Generator
 - A sample HTML page can be found in the 'dist' folder as index.html 
 
 ## Introduction 
-This is a Node.js built "Team Profile Generator" that generates a HTML page that displays employee information that is based on user input. 'Jest' was used for testing purposes and 'Inquirer' was used for the command line questions.  
+This is a Node.js built "Team Profile Generator" that generates a HTML page that displays employee information that is based on user input. 'Jest' was used for testing purposes and 'Inquirer' was used for the command line questions. The CSS framework 'Bulma' was used for styling the HTML file.   
 
 ## Instructional 
 Video Guide: https://drive.google.com/file/d/1dVLSFcwc9BgUd-BfzMwiOYrGsKL9n-qb/view
